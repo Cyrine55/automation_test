@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(features = {"src/spec/features"},
                  plugin = {"pretty", "html:target/cucumber-report.html"}, 
-                 tags = ("@Authentification"), 
+                 tags = ("@login-valid"), 
                  //glue = {"step_deficitions"},
                  monochrome = true, 
                  snippets = CAMELCASE
@@ -26,8 +26,6 @@ import org.junit.runner.RunWith;
  * This class is ised to run the test,which is JUinit Test Runner Class
  * containing the Step Definition location and the other primary data requiered to run the test 
  * */
-
-
 
 public class RunWebSuiteTest {
 
