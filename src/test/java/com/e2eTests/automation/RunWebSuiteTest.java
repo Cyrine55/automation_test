@@ -16,9 +16,9 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(features = {"src/spec/features"},
                  plugin = {"pretty", "html:target/cucumber-report.html"}, 
-                 tags = ("@login-valid"), 
+                 tags = ("@productName"), 
                  //glue = {"step_deficitions"},
-                 monochrome = true, 
+                 monochrome = false, 
                  snippets = CAMELCASE
 
 )

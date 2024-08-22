@@ -1,5 +1,7 @@
 package com.e2eTests.automation.step_definitions;
 
+import java.time.Duration;
+
 import com.e2eTests.automation.page_Objects.LoginPage;
 import com.e2eTests.automation.utils.Setup;
 
@@ -14,10 +16,13 @@ public class LoginStepDefinition {
 		loginPage= new LoginPage();
 	}
 	
+	
+	/*login valid*/
 	@Given("Je visite l'application NopCommerce")
 	public void jeVisiteLApplicationNopCommerce() throws InterruptedException {
 		Setup.getDriver().get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
-		Thread.sleep(90000);
+		Thread.sleep(3000);
+		
 	}
 	
 	@When("Je saisi l'adresse mail {string}")
@@ -38,6 +43,12 @@ public class LoginStepDefinition {
 	
 	@Then("Je me redirige vers la page home")
 	public void jeMeRedirigeVersLaPageHome() {
+	    
+	}
+
+	/*login invalid*/
+	@Then("Je verifie le message d'erreur")
+	public void jeVerifieLeMessageDErreur() {
 	    
 	}
 
