@@ -14,8 +14,15 @@ public class ProductNamePage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Catalog']")
 	private static WebElement menuCatalog ;
 
-
-	
+    @FindBy(how=How.XPATH, using ="//p[normalize-space()='Products']")
+    private static WebElement menuProduct ;
+    
+    @FindBy(how=How.ID, using ="SearchProductName")
+    private static WebElement productName ;
+    
+    @FindBy(how=How.ID, using ="search-products")
+    private static WebElement btnSearch ;
+    
 	public ProductNamePage() {
 		super(Setup.getDriver());
 	}
@@ -24,5 +31,16 @@ public class ProductNamePage extends BasePage {
 		return menuCatalog;
 	}
 	
+	public static WebElement getMenuProduct() {
+		return menuProduct;
+	}
 	
+	public static WebElement getProductName() {
+		return productName;
+	}
+	
+	public static WebElement getBtnSearch() {
+		return btnSearch;
+	}
+
 }

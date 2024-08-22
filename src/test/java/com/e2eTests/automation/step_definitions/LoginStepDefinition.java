@@ -19,26 +19,25 @@ public class LoginStepDefinition {
 	
 	/*login valid*/
 	@Given("Je visite l'application NopCommerce")
-	public void jeVisiteLApplicationNopCommerce() throws InterruptedException {
+	public void jeVisiteLApplicationNopCommerce() {
 		Setup.getDriver().get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
-		Thread.sleep(3000);
 		
 	}
 	
 	@When("Je saisi l'adresse mail {string}")
 	public void jeSaisiLAdresseMail(String email) {
-	    LoginPage.getEmail().sendKeys(email);
+		//LoginPage.getEmail().clear();
+	   // LoginPage.getEmail().sendKeys(email);
 	}
 	
 	@When("Je saisis le login {string}")
 	public void jeSaisisLeLogin(String login) {
-		LoginPage.getPassword().clear();
-		LoginPage.getPassword().sendKeys(login);;
+		//LoginPage.getPassword().sendKeys(login);;
 	}
 	
 	@When("Je clique sur le bouton Login")
 	public void jeCliqueSurLeBoutonLogin() {
-		LoginPage.getBtnLogin();
+		LoginPage.getBtnLogin().click();;
 	}
 	
 	@Then("Je me redirige vers la page home")
