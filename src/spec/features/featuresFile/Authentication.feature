@@ -1,4 +1,4 @@
-@Authentification
+@Authentification @tnr
 Feature: Authentification
   ETQ utilisateur je souhaite m'authentifier
 

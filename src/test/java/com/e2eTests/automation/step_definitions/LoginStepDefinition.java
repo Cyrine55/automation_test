@@ -3,6 +3,7 @@ package com.e2eTests.automation.step_definitions;
 import java.time.Duration;
 
 import com.e2eTests.automation.page_Objects.LoginPage;
+import com.e2eTests.automation.utils.ConfigFileReader;
 import com.e2eTests.automation.utils.Setup;
 
 import io.cucumber.java.en.Given;
@@ -11,16 +12,19 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDefinition {
 	public LoginPage loginPage;
+	public ConfigFileReader configFileReader;
 	
 	public LoginStepDefinition() {
 		loginPage= new LoginPage();
+		configFileReader = new ConfigFileReader();
 	}
 	
 	
 	/*login valid*/
 	@Given("Je visite l'application NopCommerce")
-	public void jeVisiteLApplicationNopCommerce() {
-		Setup.getDriver().get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
+	public void jeVisiteLApplicationNopCommerce(){
+		Setup.getDriver().get(configFileReader.getProperties("home.url"));
+		
 		
 	}
 	
