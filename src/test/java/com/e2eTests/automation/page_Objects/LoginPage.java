@@ -7,10 +7,9 @@ import org.openqa.selenium.support.How;
 import com.e2eTests.automation.utils.BasePage;
 import com.e2eTests.automation.utils.Setup;
 
-public class LoginPage extends BasePage{
-	
+public class LoginPage extends BasePage {
+
 	/* Retrieve element */
-	
 	@FindBy(how = How.ID, using = "Email")
 	private static WebElement email;
 
@@ -23,6 +22,7 @@ public class LoginPage extends BasePage{
 	public LoginPage() {
 		super(Setup.getDriver());
 	}
+
 	public static WebElement getEmail() {
 		return email;
 	}
@@ -34,6 +34,4 @@ public class LoginPage extends BasePage{
 	public static WebElement getBtnLogin() {
 		return btnLogin;
 	}
-	
-	
 }
